@@ -17,12 +17,13 @@ public class StepTracker {
     {   int sumStep=0;
         int bestSeries =0;
         int maxBest=0;
+        int y=1;
         Converter converter = new Converter();
         System.out.println("Cтатистика по дням : ");
         for (int x :monthToData[month-1].days)
         {
             sumStep = sumStep + x;
-            System.out.print("1 день: " + x + ", ");
+            System.out.print(y + " день: " + x + ", ");
             if(x>=purpose)
             {
                 bestSeries++;
@@ -35,6 +36,7 @@ public class StepTracker {
                 }
                 bestSeries=0;
             }
+            y++;
         }
         System.out.println("Общее количество шагов за месяц: " + sumStep );
         System.out.println("Среднее количество шагов за месяц: " + sumStep/30 );
