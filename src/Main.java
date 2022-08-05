@@ -24,9 +24,10 @@ public class Main {
                         short day = scanner.nextShort();
                         System.out.println("Количество шагов: ");
                         int steps = scanner.nextInt();
-                        if(month<1||steps<1||day<1)
+                        if(month<1||steps<1||day<1 ||
+                            month >12 || day> 30)
                         {
-                            System.out.println("Числа должны быть больше нуля.Возврат в основное меню");
+                            System.out.println("Числа не должны выходить за рамки возможного .Возврат в основное меню");
                             break;
                         }
                         else stepTracker.SetSteps(month,day,steps);
@@ -39,9 +40,9 @@ public class Main {
                                 "\n" + "где 1 - Январь, 2 - Февраль, 3 - Март и так далее");
                         System.out.println("Месяц: ");
                         short month2 = scanner.nextShort();
-                        if(month2<1)
+                        if(month2<1 || month2 > 12)
                         {
-                            System.out.println("Число должно быть больше нуля.Возврат в основное меню");
+                            System.out.println("Число должно быть в рамках 12 -ти месяцев.Возврат в основное меню");
                             break;
                         }
                         else stepTracker.viewStatistic(month2);
