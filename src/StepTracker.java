@@ -27,6 +27,10 @@ public class StepTracker {
             if(x>=purpose)
             {
                 bestSeries++;
+                if(y==30 && maxBest < bestSeries)
+                {
+                        maxBest = bestSeries;
+                }
             }
             else
             {
@@ -38,7 +42,7 @@ public class StepTracker {
             }
             y++;
         }
-        System.out.println("Общее количество шагов за месяц: " + sumStep );
+        System.out.println("\n" + "Общее количество шагов за месяц: " + sumStep ); // исправлен перенос строки
         System.out.println("Среднее количество шагов за месяц: " + sumStep/30 );
         System.out.println("Пройденная дистанция за месяц (км): " + converter.convertToKMeters(sumStep));
         System.out.println("Количество сожженых Ккалорий: " + converter.convertToCCalories(sumStep));
@@ -55,16 +59,5 @@ public class StepTracker {
     class MonthData {
         int [] days = new int[30];
 
-    }
-}
-     class Converter
-{
-    double convertToKMeters(int steps)
-    {
-        return (steps*0.75)/1000;
-    }
-    double convertToCCalories(int steps)
-    {
-        return (steps*50)/1000;
     }
 }
